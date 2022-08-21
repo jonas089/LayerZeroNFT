@@ -1,11 +1,14 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
+// ERC721
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
+// Types
 import "@openzeppelin/contracts/utils/Strings.sol";
-// metadata
+// URI interface
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+// LayerZero
 import "./ILayerZeroEndpoint.sol";
 import "./ILayerZeroReceiver.sol";
 
@@ -99,6 +102,7 @@ contract OmniChainNFT is ERC721URIStorage, Ownable, ILayerZeroReceiver {
         );
         // mint the tokens
         _safeMint(toAddress, tokenId);
+        // set URI for newly minted token
         _setTokenURI(nextId, string(abi.encodePacked("http://baseurl/",' ',string(Strings.toString(nextId)))));
         counter += 1;
         emit ReceiveNFT(_srcChainId, toAddress, tokenId, counter);
