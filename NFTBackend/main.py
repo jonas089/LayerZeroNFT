@@ -23,8 +23,8 @@ def uri():
         return "Error 0: Missing ID"
     metadata = openSeaMetadata(
         "some test nft.",
-        "https://previews.dropbox.com/p/thumb/ABoua9EcWINqUTRnhSq-hBpgEih1-GTHAIAGkocI0idsI4Efwhzirf-5zaWXt0cOqBPJI2bWQ9cH7ewYJF75KKz8EnBnzFUPOKyn_ToWcDiNQ3jDFB30TVDREa5yRpha09b1OeWMk1ZUUzS1AuDdNbopOSGQ3DrrOVTKLbGDIp0e6ROHOMrYXI1gPrY5wnYuzB_-FQi780GxcovunlUH5No_ZQ2rUm9K_u7bF6uWwibb4NKoRUSaDbh7UoY-_dbniqk1lEGIk9MrmH9WnSwkI8qX7r9i5kn56mWYmPINgFxmxMv5BBWgOYjIl_MoalPMLk_1mbYcklgrsw3SgxLuCjlKzORLs6--9coDI75e49rml-sozpKijDuEeBZglpTuVfA/p.jpeg",
-        "https://previews.dropbox.com/p/thumb/ABoua9EcWINqUTRnhSq-hBpgEih1-GTHAIAGkocI0idsI4Efwhzirf-5zaWXt0cOqBPJI2bWQ9cH7ewYJF75KKz8EnBnzFUPOKyn_ToWcDiNQ3jDFB30TVDREa5yRpha09b1OeWMk1ZUUzS1AuDdNbopOSGQ3DrrOVTKLbGDIp0e6ROHOMrYXI1gPrY5wnYuzB_-FQi780GxcovunlUH5No_ZQ2rUm9K_u7bF6uWwibb4NKoRUSaDbh7UoY-_dbniqk1lEGIk9MrmH9WnSwkI8qX7r9i5kn56mWYmPINgFxmxMv5BBWgOYjIl_MoalPMLk_1mbYcklgrsw3SgxLuCjlKzORLs6--9coDI75e49rml-sozpKijDuEeBZglpTuVfA/p.jpeg",
+        "https://previews.dropbox.com/p/thumb/ABqP3oVjyDt_Sa8ieT-i8w5Zgqlith2UNFWPRs2rE6qurwwWUBc72mrSiRGROuVw1OnjKH6RAO9-jal-FM6xMXE0uEtbFFhXry2FQaXjgqJ8MvPONYtCYMN0BFCU-Ffq6bGVnjp0VKQ1m_nCs1eMXHDWOEDiixBs_iQxduuFyHkJuzIxJqGQrn2EYnYNfxYnChZ8Cfa12dxBuOYzZMiZYTV7KoN250C73Z9Ib_M0QiV-zxm-a80r9-taZDDpymxMWZ-uxNUqQDR9kWJkgaiMqjqtOEgO91JbBaY1q6IK0K76r_RNdQ0cHqcELZgZKnUiUmbrQJe4lt4BSfucuM7XWCflH2udBtWmflP83XpyfntgWw-5qUSiXXOA4z8C_kHFvlg/p.jpeg",
+        "https://previews.dropbox.com/p/thumb/ABqP3oVjyDt_Sa8ieT-i8w5Zgqlith2UNFWPRs2rE6qurwwWUBc72mrSiRGROuVw1OnjKH6RAO9-jal-FM6xMXE0uEtbFFhXry2FQaXjgqJ8MvPONYtCYMN0BFCU-Ffq6bGVnjp0VKQ1m_nCs1eMXHDWOEDiixBs_iQxduuFyHkJuzIxJqGQrn2EYnYNfxYnChZ8Cfa12dxBuOYzZMiZYTV7KoN250C73Z9Ib_M0QiV-zxm-a80r9-taZDDpymxMWZ-uxNUqQDR9kWJkgaiMqjqtOEgO91JbBaY1q6IK0K76r_RNdQ0cHqcELZgZKnUiUmbrQJe4lt4BSfucuM7XWCflH2udBtWmflP83XpyfntgWw-5qUSiXXOA4z8C_kHFvlg/p.jpeg",
         "TEST"
     )
     return jsonify(metadata)
