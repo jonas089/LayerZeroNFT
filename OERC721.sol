@@ -42,15 +42,41 @@ contract OmniChainNFT is ERC721URIStorage, Ownable, ILayerZeroReceiver {
         return tokenURI(tokenId);
     }
 
+    // get gas estimate
+    function externalEstimateFees(
+        uint256 tokenId,
+        uint16 _dstChainId
+    ) external view returns (string memory maybeFee){
+        bytes memory payload = abi.encode(msg.sender, tokenId);
+        // encode adapterParams to specify more gas for the destination
+        uint16 version = 1;
+        bytes memory adapterParams = abi.encodePacked(version, gas);
+        (uint256 messageFee, ) = endpoint.estimateFees(
+            _dstChainId,
+            address(this),
+            payload,
+            false,
+            adapterParams
+        );
+        return Strings.toString(messageFee);
+    }
     // mint token with dummy URI for showcasing
     function mint() external payable {
+        // check availability
         require(nextId + 1 <= MAX, "Exceeds supply");
+        // pay mint fee
+        address recipient = 0x665c6761868f26FfB3ad1934C5E6AfE83CF990F4;
+        // fee hardcoded for testing, use uniswap for stable fee in the future.
+        uint256 amt = 1000000000000000;
+        require(msg.value >= amt, "Value too low for this transaction.");
+        (bool success, ) = recipient.call{value:amt}("");
+        require(success, "Could not pay fees.");
+        // fee paid, continue minting process
         nextId += 1;
         _safeMint(msg.sender, nextId);
         _setTokenURI(nextId, string(abi.encodePacked("http://baseurl/",' ',string(Strings.toString(nextId)))));
         counter += 1;
     }
-
     // Layerzero functions
     function crossChain(
         uint16 _dstChainId,
@@ -102,7 +128,7 @@ contract OmniChainNFT is ERC721URIStorage, Ownable, ILayerZeroReceiver {
         );
         // mint the tokens
         _safeMint(toAddress, tokenId);
-        // set URI for newly minted token
+        string(abi.encodePacked("http://baseurl/",' ',string(Strings.toString(nextId))));
         _setTokenURI(nextId, string(abi.encodePacked("http://baseurl/",' ',string(Strings.toString(nextId)))));
         counter += 1;
         emit ReceiveNFT(_srcChainId, toAddress, tokenId, counter);
