@@ -1,0 +1,80 @@
+<script src="{{ url_for('static', filename='main.js')}}"></script>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+      .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    </style>
+    <script src="{{ url_for('static', filename='web3.min.js') }}"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>NFT Webapp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+</head>
+<body style="background-color:black;" href="">
+  <header class="header_area">
+      <div class="main_menu">
+          <nav class="navbar navbar-expand-lg navbar-light">
+                  <div class="right-button">
+                      <ul>
+                          <button class="button" onclick="load();">Connect</button>
+                      </ul>
+                  </div>
+              </div>
+          </nav>
+      </div>
+  </header>
+
+<div class="jumbotron text-center">
+  <h1>Cross Chain NFT Website</h1>
+  <p>Resize this responsive page to see the effect!</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Cross Chain (LayerZero)</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Jonas NFT Collection</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Romedius NFT Collection</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <button class="button" id="mintbutton" onclick="mint();">Mint NFT</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+
+<script type="text/javascript">
+  load();
+</script>
