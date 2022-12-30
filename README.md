@@ -33,37 +33,4 @@ This code has been tested on Rinkeby and Binance Testnet. \
 5. Transfer was successful
 
 
-## Roadmap
-- Issues
-1. gas fee estimation - status: resolved
-2. chains don't know when token minted on other chains
-  - option 1: use messaging protocol to notify on mint => not realtime, so this will cause problems for sure !
-  - option 2 (preferred): use startID and maxID to make sure every NFT on every Chain is unique and split the collection up.
-  note: not every NFT can be minted on every chain, example: \
-    Ids 0-100 can be minted on Binance only!, \
-    Ids 101-200 can be minted on Ethereum only!, \
-    ... this is a limitation caused by blockchains not being able to communicate in real time and could only  theoretically be solved \
-    by advanced cross-chain synchronization.
 
-- Milestone 1
-setup a Flask webserver with X dummy URIs \
-that returns JSON to opensea and other Dapps \
-Status: TBD by 25th of August \
-
-- Milestone 2
-write a mint contract that owns the NFT contract \
-build dummy website with "mint" button in Flask html - recycle defl8 code \
-website can call mint contract => fee is paid for minting \
-
-- Milestone 3
-migrate to IPFS
-
-- Milestone 4
-deploy to all testnets and make sure everything works as expected.
-
-- Milestone 5
-add functionality to website (e.g. cross-chain transfers) \
-improve website design
-
-- Launch
-...
